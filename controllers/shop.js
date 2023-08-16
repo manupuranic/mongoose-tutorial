@@ -82,6 +82,7 @@ exports.postCartDeleteProduct = (req, res, next) => {
   req.user
     .deleteCartItem(prodId)
     .then((result) => {
+      console.log("DELETED CART ITEM");
       res.redirect("/cart");
     })
     .catch((err) => console.log(err));
